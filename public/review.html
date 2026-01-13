@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Assets</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Asset Review</h1>
+      <p class="subtitle">Review and approve assets</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Loading State -->
+    <div class="loading" id="loadingState">
+      <div class="spinner"></div>
+      <p>Loading assets...</p>
+    </div>
+
+    <!-- Error State -->
+    <div class="error-state" id="errorState" style="display: none;">
+      <h2>Assets not found</h2>
+      <p>This review link may be invalid or expired.</p>
+    </div>
+
+    <!-- Content -->
+    <div id="content" style="display: none;">
+      <!-- Batch Header -->
+      <div class="batch-header">
+        <h1 id="batchTitle">Asset Review</h1>
+        <div class="batch-stats">
+          <span class="stat">Total: <span class="stat-value" id="totalCount">0</span></span>
+          <span class="stat">Approved: <span class="stat-value" id="approvedCount">0</span></span>
+          <span class="stat">Pending: <span class="stat-value" id="pendingCount">0</span></span>
+        </div>
+      </div>
+
+      <!-- Images Section -->
+      <section>
+        <h2 class="section-title">Images</h2>
+        <div class="asset-grid" id="assetGrid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Asset Detail Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalFilename">Image</h2>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image-section">
+          <img id="modalImage" src="" alt="">
+        </div>
+        <div class="modal-sidebar">
+          <div class="modal-actions">
+            <div class="action-buttons">
+              <button class="approve-btn" id="approveBtn">👍 Approve</button>
+              <button class="reject-btn" id="rejectBtn">👎 Reject</button>
+            </div>
+          </div>
+          <div class="comments-section">
+            <div class="comments-header">Comments</div>
+            <div class="comments-list" id="commentsList">
+              <p class="no-comments">No comments yet</p>
+            </div>
+            <form class="comment-form" id="commentForm">
+              <input type="text" id="commentAuthor" placeholder="Your name" required>
+              <textarea id="commentContent" placeholder="Add a comment..." required></textarea>
+              <button type="submit">Add Comment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/review.js"></script>
+</body>
+</html>

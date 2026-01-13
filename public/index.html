@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asset Approver - Upload</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Asset Approver</h1>
+      <p class="subtitle">Upload images for brand review and approval</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Upload Area -->
+    <div class="upload-area" id="uploadArea">
+      <div class="upload-icon">📁</div>
+      <h2>Drop your images here</h2>
+      <p>or click to browse files</p>
+      <input type="file" id="fileInput" multiple accept="image/*" hidden>
+      <button class="upload-btn" id="browseBtn">Browse Files</button>
+    </div>
+
+    <!-- Preview Area -->
+    <div class="preview-area" id="previewArea">
+      <h3 class="section-title">Selected Images</h3>
+      <div class="preview-grid" id="previewGrid"></div>
+      <button class="upload-btn" id="uploadBtn">Upload Images</button>
+    </div>
+
+    <!-- Result Area -->
+    <div class="result-area" id="resultArea">
+      <div class="success-icon">✅</div>
+      <h2>Upload Complete!</h2>
+      <p>Share this link with brands to review and approve your assets:</p>
+      <div class="share-url">
+        <input type="text" id="shareUrl" readonly>
+        <button class="copy-btn" id="copyBtn">Copy Link</button>
+      </div>
+      <br><br>
+      <button class="upload-btn" onclick="location.reload()">Upload More</button>
+    </div>
+  </main>
+
+  <script src="/js/upload.js"></script>
+</body>
+</html>
